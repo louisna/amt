@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:20.04
 MAINTAINER Jake Holland <jholland@akamai.com>
 
 # multi-stage build --jake 2018-04-02
@@ -29,7 +29,7 @@ RUN cd /amt && autoreconf -f -i && ./configure && make
 #    cd amt && autoreconf -f -i && ./configure && make
 
 # stage 1
-FROM ubuntu:latest
+FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
