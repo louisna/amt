@@ -88,6 +88,7 @@ if ip link show dev eth1 > /dev/null; then
 fi
 
 ip link set up dev tun0
+rm /tmp/amtgwd.pid
 
 cd /var/log
 /bin/amtgwd -a $discovery_ip -s $sarg -n $narg -l $larg -c tun0 $amt_d &
